@@ -17,14 +17,14 @@ public class EnterStudentData {
                 "\nStudent Address: " + studentAddress +
                 "\nStudent GPA: " + studentGPA +
                 "\n";}
-    public static void sort(EnterStudentData[] studentList, Comparator<EnterStudentData> comparator){
-        int n = studentList.length;
+    public static void sort(LinkedList<EnterStudentData> studentList, Comparator<EnterStudentData> comparator){
+        int n = studentList.size();
         for(int i = 0; i < n-1; i++){
             for(int j = 0; j < n - i - 1; j++){
-                if(comparator.compare(studentList[j], studentList[j + 1]) > 0) {
-                    EnterStudentData temp = studentList[j];
-                    studentList[j] = studentList[j + 1];
-                    studentList[j + 1] = temp;
+                if(comparator.compare(studentList.get(j), studentList.get(j + 1)) > 0) {
+                    EnterStudentData temp = studentList.get(j);
+                    studentList.set(j,studentList.get(j + 1) );
+                    studentList.set(j + 1, temp);
                 }}}}
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
@@ -41,6 +41,7 @@ public class EnterStudentData {
             studentGPA = scnr.nextInt();
             EnterStudentData newStudent = new EnterStudentData(studentName, studentAddress, studentGPA);
             studentList.add(i,newStudent);}
+        EnterStudentData.sort(studentList, new ComparatorName());
 
 
 

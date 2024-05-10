@@ -1,10 +1,49 @@
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Scanner;
 public class EnterStudentData {
-    private String name;
-    private String address;
-    private double GPA;
-    public EnterStudentData(String name, String address, double GPA){
-        this.name = name;
-        this.address = address;
-        this.GPA = GPA;
+    private String studentName;
+    private String studentAddress;
+    private double studentGPA;
+    public EnterStudentData(String studentName, String studentAddress, double studentGPA){
+        this.studentName = studentName;
+        this.studentAddress = studentAddress;
+        this.studentGPA = studentGPA;}
+    public String GetStudentName(){
+        return studentName;
+    }
+    public String toString() {
+        return "\n\nStudent Name: " + studentName +
+                "\nStudent Address: " + studentAddress +
+                "\nStudent GPA: " + studentGPA +
+                "\n";}
+    public static void sort(EnterStudentData[] studentList, Comparator<EnterStudentData> comparator){
+        int n = studentList.length;
+        for(int i = 0; i < n-1; i++){
+            for(int j = 0; j < n - i - 1; j++){
+                if(comparator.compare(studentList[j], studentList[j + 1]) > 0) {
+                    EnterStudentData temp = studentList[j];
+                    studentList[j] = studentList[j + 1];
+                    studentList[j + 1] = temp;
+                }}}}
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        String studentName;
+        String studentAddress;
+        double studentGPA;
+        LinkedList<EnterStudentData> studentList = new LinkedList<>();
+        for(int i=0;i<10;i++){
+            System.out.println("Enter student name: ");
+            studentName = scnr.nextLine();
+            System.out.println("Enter student address: ");
+            studentAddress = scnr.nextLine();
+            System.out.println("Enter student GPA: ");
+            studentGPA = scnr.nextInt();
+            EnterStudentData newStudent = new EnterStudentData(studentName, studentAddress, studentGPA);
+            studentList.add(i,newStudent);}
+
+
+
     }
 }
+

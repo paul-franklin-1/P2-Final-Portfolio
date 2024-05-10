@@ -16,6 +16,9 @@ public class Main {
             studentAddress = scnr.nextLine();
             System.out.println("Enter student GPA: ");
             studentGPA = scnr.nextInt();
-            new EnterStudentData(studentName, studentAddress, studentGPA);
+            EnterStudentData newStudent = new EnterStudentData(studentName, studentAddress, studentGPA);
+            studentList.add(i,newStudent);
+
+
     }
 }

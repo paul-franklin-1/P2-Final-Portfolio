@@ -1,6 +1,8 @@
+import java.io.IOException;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.io.FileWriter;
 public class EnterStudentData {
     private String studentName;
     private String studentAddress;
@@ -45,8 +47,14 @@ public class EnterStudentData {
             studentList.add(newStudent);
             }
         EnterStudentData.sort(studentList, new ComparatorName());
-        String stringDisplayStudentList = studentList.toString();
-        System.out.println(stringDisplayStudentList);
+        String studentContent = studentList.toString();
+        String studentFilePath = "StudentData.txt";
+        try(FileWriter studentWriter = new FileWriter(studentFilePath)){
+            studentWriter.write(studentContent);
+            System.out.print("Content has been written to file.");
+        }catch (IOException e) {
+            System.out.println("An Error occurred while writing to file: " + e.getMessage());
+        }
 
 
     }

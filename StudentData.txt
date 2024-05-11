@@ -1,0 +1,19 @@
+[
+
+Student Name: Albert
+Student Address: dslk;jfalskdjf
+Student GPA: 2.2222
+
+, 
+
+Student Name: Beta
+Student Address: dslakjfa
+Student GPA: 4.0
+
+, 
+
+Student Name: Paul
+Student Address: sldka;fjlkda;
+Student GPA: 3.3
+
+]

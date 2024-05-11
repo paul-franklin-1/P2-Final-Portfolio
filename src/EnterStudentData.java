@@ -12,6 +12,7 @@ public class EnterStudentData {
     public String GetStudentName(){
         return studentName;
     }
+    @Override
     public String toString() {
         return "\n\nStudent Name: " + studentName +
                 "\nStudent Address: " + studentAddress +
@@ -42,7 +43,8 @@ public class EnterStudentData {
             EnterStudentData newStudent = new EnterStudentData(studentName, studentAddress, studentGPA);
             studentList.add(i,newStudent);}
         EnterStudentData.sort(studentList, new ComparatorName());
-
+        String stringDisplayStudentList = studentList.toString();
+        System.out.println(stringDisplayStudentList);
 
 
     }

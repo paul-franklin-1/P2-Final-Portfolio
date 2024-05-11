@@ -17,7 +17,7 @@ public class EnterStudentData {
         return "\n\nStudent Name: " + studentName +
                 "\nStudent Address: " + studentAddress +
                 "\nStudent GPA: " + studentGPA +
-                "\n";}
+                "\n\n";}
     public static void sort(LinkedList<EnterStudentData> studentList, Comparator<EnterStudentData> comparator){
         int n = studentList.size();
         for(int i = 0; i < n-1; i++){
@@ -29,19 +29,21 @@ public class EnterStudentData {
                 }}}}
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
-        String studentName;
-        String studentAddress;
-        double studentGPA;
+        String nameStudent;
+        String addressStudent;
+        double gpaStudent;
         LinkedList<EnterStudentData> studentList = new LinkedList<>();
         for(int i=0;i<10;i++){
             System.out.println("Enter student name: ");
-            studentName = scnr.nextLine();
+            nameStudent = scnr.nextLine();
             System.out.println("Enter student address: ");
-            studentAddress = scnr.nextLine();
+            addressStudent = scnr.nextLine();
             System.out.println("Enter student GPA: ");
-            studentGPA = scnr.nextInt();
-            EnterStudentData newStudent = new EnterStudentData(studentName, studentAddress, studentGPA);
-            studentList.add(i,newStudent);}
+            gpaStudent = scnr.nextDouble();
+            scnr.nextLine();
+            EnterStudentData newStudent = new EnterStudentData(nameStudent, addressStudent, gpaStudent);
+            studentList.add(newStudent);
+            }
         EnterStudentData.sort(studentList, new ComparatorName());
         String stringDisplayStudentList = studentList.toString();
         System.out.println(stringDisplayStudentList);

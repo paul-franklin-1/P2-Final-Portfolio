@@ -5,8 +5,8 @@ import java.util.Comparator;
      */
 public class ComparatorName implements Comparator<EnterStudentData> {
     @Override
-    public int compare(EnterStudentData s1, EnterStudentData s2) {
-        return CharSequence.compare(s1.GetStudentName(), s2.GetStudentName());
+    public int compare(EnterStudentData o1, EnterStudentData o2) {
+        return o1.GetStudentName().compareTo(o2.GetStudentName());
         }
     }
 

@@ -1,61 +1,61 @@
 [
 
-Student Name: Chrstine Discenza
-Student Address: Miami
-Student GPA: 4.2222
+Student Name: David
+Student Address: Israel
+Student GPA: 4.5
 
 , 
 
-Student Name: Connor Franklin
-Student Address: Denver
+Student Name: Debra
+Student Address: Nigeria
 Student GPA: 4.4
 
 , 
 
-Student Name: Doug Franklin
-Student Address: Washington
-Student GPA: 4.4
-
-, 
-
-Student Name: Kate Callihan
-Student Address: Miami
-Student GPA: 3.3
-
-, 
-
-Student Name: Klegg Camtrate
-Student Address: Virginia
-Student GPA: 2.9
-
-, 
-
-Student Name: Max Plankk
-Student Address: Wisconsin
-Student GPA: 2.5
-
-, 
-
-Student Name: Paul Franklin
+Student Name: Ivan
 Student Address: Connecticut
 Student GPA: 4.1
 
 , 
 
-Student Name: Paul McCartney
-Student Address: Somewhere
-Student GPA: 4.01111
+Student Name: Johnny
+Student Address: Colombia
+Student GPA: 3.54
 
 , 
 
-Student Name: Penny Lane
-Student Address: South Dakota
-Student GPA: 1.4
+Student Name: Margery
+Student Address: Dallas
+Student GPA: 2.9
 
 , 
 
-Student Name: Scott Franklin
-Student Address: Idaho
+Student Name: Mary
+Student Address: Italy
 Student GPA: 3.7
+
+, 
+
+Student Name: Onox
+Student Address: Florence
+Student GPA: 3.5
+
+, 
+
+Student Name: Paul
+Student Address: Denver
+Student GPA: 3.4
+
+, 
+
+Student Name: Phil
+Student Address: Brazil
+Student GPA: 2.2
+
+, 
+
+Student Name: Roger
+Student Address: Detroit
+Student GPA: 4.0
 
 ]

@@ -85,7 +85,8 @@ public class EnterStudentData {
             String studentFilePath = "StudentData.txt";
             try(FileWriter studentWriter = new FileWriter(studentFilePath)){
                 studentWriter.write(studentContent);
-                System.out.print("Content has been sorted and written to file.\n\nSorted content printed below: ");
+                System.out.print("Content has been sorted and written to file.\n\nSorted content " +
+                        "is also printed below: ");
             } catch (IOException e) {
                 System.err.println("An error occurred while writing to the file: " + e.getMessage());
             }

@@ -1,7 +1,7 @@
 import java.util.Comparator;
     /**
-     * Enables the EnterStudentData class to sort  studentList LinkedList
-     * according to studentName
+     * Enables the EnterStudentData class' "sort" method to rearrange the
+     * LinkedList called "studentList" according to studentName field, alphabetically
      */
 public class ComparatorName implements Comparator<EnterStudentData> {
     @Override

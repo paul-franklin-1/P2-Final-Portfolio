@@ -4,6 +4,11 @@ import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.io.FileWriter;
+/**
+ * Contains parameterized constructor of EnterStudentData class objects, the
+ * "getter" method for a student's name, the overriding toString method,
+ * the bubble sorting method that utilizes ComparatorName class, and the main method
+ */
 public class EnterStudentData {
     private String studentName;
     private String studentAddress;
@@ -15,12 +20,24 @@ public class EnterStudentData {
     public String GetStudentName(){
         return studentName;
     }
+
+    /**
+     * @return string containing name, address, and GPA for given object or objects,
+     * applies custom formatting
+     */
     @Override
     public String toString() {
         return "\n\nStudent Name: " + studentName +
                 "\nStudent Address: " + studentAddress +
                 "\nStudent GPA: " + studentGPA +
                 "\n\n";}
+
+    /**
+     * Using bubble sort and interacting with class ComparatorName, sorts LinkedList of
+     * 10 EnterStudentData objects according to students' name, alphabetically
+     * @param studentList
+     * @param comparator
+     */
     public static void sort(LinkedList<EnterStudentData> studentList, Comparator<EnterStudentData> comparator){
         int n = studentList.size();
         for(int i = 0; i < n-1; i++){
@@ -30,6 +47,13 @@ public class EnterStudentData {
                     studentList.set(j,studentList.get(j + 1) );
                     studentList.set(j + 1, temp);
                 }}}}
+
+    /**
+     * Main method creates LinkedList "studentList", then uses "for" loop to prompt user
+     * to input info for 10 EnterStudentData objects, applies the sort() method to
+     * "studentList", uses toString() to print data from "studentList" to file "StudentData.txt")
+     * @param args
+     */
     public static void main(String[] args) {
         String nameStudent;
         String addressStudent;

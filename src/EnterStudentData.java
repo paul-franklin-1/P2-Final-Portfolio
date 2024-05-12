@@ -37,7 +37,7 @@ public class EnterStudentData {
         double doubleInput;
         try (Scanner scnr = new Scanner(System.in)) {
             LinkedList<EnterStudentData> studentList = new LinkedList<>();
-            for (int i = 0; i <10; i++) {
+            for (int i = 0; i < 10; i++) {
                 System.out.println("Enter student name: ");
                 nameStudent = scnr.nextLine();
                 System.out.println("Enter student address: ");
@@ -52,24 +52,24 @@ public class EnterStudentData {
                         scnr.next();
                     }
                 }
-        scnr.nextLine();
-        EnterStudentData newStudent = new EnterStudentData(nameStudent, addressStudent, gpaStudent);
-        studentList.add(newStudent);
-    }
-        EnterStudentData.sort(studentList, new ComparatorName());
-        String studentContent = studentList.toString();
-        String studentFilePath = "StudentData.txt";
-
-        try(FileWriter studentWriter = new FileWriter(studentFilePath)){
-            studentWriter.write(studentContent);
-            System.out.print("Content has been sorted and written to file.\n\nSorted content printed below: ");
-        }catch (IOException e) {
-            System.out.println("An Error occurred while writing to file: " + e.getMessage());
-        }
+                scnr.nextLine();
+                EnterStudentData newStudent = new EnterStudentData(nameStudent, addressStudent, gpaStudent);
+                studentList.add(newStudent);
+            }
+            EnterStudentData.sort(studentList, new ComparatorName());
+            String studentContent = studentList.toString();
+            String studentFilePath = "StudentData.txt";
+            try(FileWriter studentWriter = new FileWriter(studentFilePath)){
+                studentWriter.write(studentContent);
+                System.out.print("Content has been sorted and written to file.\n\nSorted content printed below: ");
+            } catch (IOException e) {
+                System.err.println("An error occurred while writing to the file: " + e.getMessage());
+            }
         System.out.print(studentContent);
-        } catch (InputMismatchException e) {
-            System.out.println("Enter valid input type.");
+        }catch(InputMismatchException e) {
+            System.out.println("Enter valid input type.");}
+
         }
     }
-}
+
 

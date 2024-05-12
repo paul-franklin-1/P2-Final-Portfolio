@@ -31,13 +31,13 @@ public class EnterStudentData {
                     studentList.set(j + 1, temp);
                 }}}}
     public static void main(String[] args) {
+        String nameStudent;
+        String addressStudent;
         double gpaStudent;
         double doubleInput;
         try (Scanner scnr = new Scanner(System.in)) {
-            String nameStudent;
-            String addressStudent;
             LinkedList<EnterStudentData> studentList = new LinkedList<>();
-            for (int i = 0; i <3; i++) {
+            for (int i = 0; i <10; i++) {
                 System.out.println("Enter student name: ");
                 nameStudent = scnr.nextLine();
                 System.out.println("Enter student address: ");
@@ -45,14 +45,13 @@ public class EnterStudentData {
                 while (true) {
                     System.out.println("Enter student GPA: ");
                     if (scnr.hasNextDouble()) {
-                        doubleInput = scnr.nextDouble();
+                        gpaStudent = scnr.nextDouble();
                         break;
                     } else {
                         System.out.println("Invalid input. Please enter a valid double value.");
-                        scnr.next(); // Consume invalid input
+                        scnr.next();
                     }
                 }
-        gpaStudent = doubleInput;
         scnr.nextLine();
         EnterStudentData newStudent = new EnterStudentData(nameStudent, addressStudent, gpaStudent);
         studentList.add(newStudent);
@@ -63,10 +62,11 @@ public class EnterStudentData {
 
         try(FileWriter studentWriter = new FileWriter(studentFilePath)){
             studentWriter.write(studentContent);
-            System.out.print("Content has been sorted and written to file.");
+            System.out.print("Content has been sorted and written to file.\n\nSorted content printed below: ");
         }catch (IOException e) {
             System.out.println("An Error occurred while writing to file: " + e.getMessage());
         }
+        System.out.print(studentContent);
         } catch (InputMismatchException e) {
             System.out.println("Enter valid input type.");
         }

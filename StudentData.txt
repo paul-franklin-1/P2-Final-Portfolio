@@ -1,19 +1,19 @@
 [
 
-Student Name: Albert
-Student Address: dslk;jfalskdjf
-Student GPA: 2.2222
+Student Name: 44
+Student Address: laskdfj293874
+Student GPA: 3.333333333
 
 , 
 
-Student Name: Beta
-Student Address: dslakjfa
-Student GPA: 4.0
+Student Name: hg
+Student Address: kd
+Student GPA: 3.0
 
 , 
 
-Student Name: Paul
-Student Address: sldka;fjlkda;
-Student GPA: 3.3
+Student Name: paul
+Student Address: lsdk;fja
+Student GPA: 2.2
 
 ]

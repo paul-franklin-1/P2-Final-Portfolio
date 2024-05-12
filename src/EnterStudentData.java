@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.Comparator;
+import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.io.FileWriter;
@@ -30,33 +31,45 @@ public class EnterStudentData {
                     studentList.set(j + 1, temp);
                 }}}}
     public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
-        String nameStudent;
-        String addressStudent;
         double gpaStudent;
-        LinkedList<EnterStudentData> studentList = new LinkedList<>();
-        for(int i=0;i<10;i++){
-            System.out.println("Enter student name: ");
-            nameStudent = scnr.nextLine();
-            System.out.println("Enter student address: ");
-            addressStudent = scnr.nextLine();
-            System.out.println("Enter student GPA: ");
-            gpaStudent = scnr.nextDouble();
-            scnr.nextLine();
-            EnterStudentData newStudent = new EnterStudentData(nameStudent, addressStudent, gpaStudent);
-            studentList.add(newStudent);
-            }
+        double doubleInput;
+        try (Scanner scnr = new Scanner(System.in)) {
+            String nameStudent;
+            String addressStudent;
+            LinkedList<EnterStudentData> studentList = new LinkedList<>();
+            for (int i = 0; i <3; i++) {
+                System.out.println("Enter student name: ");
+                nameStudent = scnr.nextLine();
+                System.out.println("Enter student address: ");
+                addressStudent = scnr.nextLine();
+                while (true) {
+                    System.out.println("Enter student GPA: ");
+                    if (scnr.hasNextDouble()) {
+                        doubleInput = scnr.nextDouble();
+                        break;
+                    } else {
+                        System.out.println("Invalid input. Please enter a valid double value.");
+                        scnr.next(); // Consume invalid input
+                    }
+                }
+        gpaStudent = doubleInput;
+        scnr.nextLine();
+        EnterStudentData newStudent = new EnterStudentData(nameStudent, addressStudent, gpaStudent);
+        studentList.add(newStudent);
+    }
         EnterStudentData.sort(studentList, new ComparatorName());
         String studentContent = studentList.toString();
         String studentFilePath = "StudentData.txt";
+
         try(FileWriter studentWriter = new FileWriter(studentFilePath)){
             studentWriter.write(studentContent);
-            System.out.print("Content has been written to file.");
+            System.out.print("Content has been sorted and written to file.");
         }catch (IOException e) {
             System.out.println("An Error occurred while writing to file: " + e.getMessage());
         }
-
-
+        } catch (InputMismatchException e) {
+            System.out.println("Enter valid input type.");
+        }
     }
 }
 
